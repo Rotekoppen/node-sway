@@ -77,7 +77,6 @@ sway.on('workspace', function(w) {
 ```js
 var sway = require('node-sway').createClient();
 sway.inputs(console.log);
-})
 ```
 
 ### Get Current mode and available modes
@@ -86,5 +85,4 @@ sway.inputs(console.log);
 var sway = require('node-sway').createClient();
 sway.mode(console.log);
 sway.modes(console.log);
-})
 ```
