@@ -33,4 +33,28 @@ I3IpcClient.prototype.barConfig = function(cb) {
   this.message(6, null, cb);
 };
 
+I3IpcClient.prototype.version = function(cb) {
+	this.message(7, null, cb);
+};
+
+I3IpcClient.prototype.modes = function(cb) {
+	this.message(8, null, cb);
+};
+
+I3IpcClient.prototype.config = function(cb) {
+	this.message(9, null, cb);
+};
+
+I3IpcClient.prototype.mode = function(cb) {
+	this.message(12, null, cb);
+};
+
+I3IpcClient.prototype.inputs = function(cb) {
+	this.message(100, null, cb);
+};
+
+I3IpcClient.prototype.seats = function(cb) {
+	this.message(101, null, cb);
+};
+
 module.exports.I3IpcClient = I3IpcClient;

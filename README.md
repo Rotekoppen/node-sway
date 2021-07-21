@@ -1,27 +1,90 @@
-# node-i3
-[i3-ipc](http://i3wm.org/docs/ipc.html) client for [node.js](http://nodejs.org)
-Helps you to automate [i3 window manager](http://i3wm.org/docs/userguide.html)
+# node-sway
 
-[![NPM](https://nodei.co/npm/i3.png?downloads=true&stars=true)](https://nodei.co/npm/i3/)
+Fork of [node-i3](https://github.com/sidorares/node-i3) to instead target sway.
 
 ## Install
 
-	npm install i3
+	npm install git+https://github.com/Rotekoppen/node-sway
 
 ## API
 
+### sway.command(<command>)
+
+Sends the <command> to sway, very much alike running swaymsg <command>
+
+### Get functions
+
+All theese functions work the same way, they fetch something and passes it to an callback.
+
+#### workspaces(<callback>)
+
+Gets the workspaces and passes it to the callback
+
+#### outputs(<callback>)
+
+Gets the outputs and passes it to the callback
+
+#### tree(<callback>)
+
+Gets the tree and passes it to the callback
+
+#### marks(<callback>)
+
+Gets the marks and passes it to the callback
+
+#### barConfig(<callback>)
+
+Gets the bar config and passes it to the callback
+
+#### version(<callback>)
+
+Gets the version and passes it to the callback
+
+#### modes(<callback>)
+
+Gets the available modes and passes it to the callback
+
+#### mode(<callback>)
+
+Gets the active mode and passes it to the callback
+
+#### config(<callback>)
+
+Gets the top level config file and passes it to the callback
+
+#### seats(<callback>)
+
+Gets the seats and passes it to the callback
+
+#### inputs(<callback>)
+
+Gets the inputs and passes it to the callback
+
+## Examples
+
+### Move the focus to the left, and subscribe to workspace events
+
 ```js
-var i3 = require('i3').createClient();
-i3.command('focus left');
-i3.on('workspace', function(w) {
+var sway = require('node-sway').createClient();
+sway.command('focus left');
+sway.on('workspace', function(w) {
   console.log('workspace event!', w);
 })
 ```
 
-## LINKS
-  - [i3-ipc wire protocol documentation](http://i3wm.org/docs/ipc.html)
-  - [Another node.js client](https://github.com/badboy/node-i3)
-  - [Python client](https://github.com/ziberna/i3-py)
-  - [collection of helper python scripts](https://github.com/yiuin/i3-wm-scripts)
+### Get inputs
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/sidorares/node-i3/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+```js
+var sway = require('node-sway').createClient();
+sway.inputs(console.log);
+})
+```
+
+### Get Current mode and available modes
+
+```js
+var sway = require('node-sway').createClient();
+sway.mode(console.log);
+sway.modes(console.log);
+})
+```
