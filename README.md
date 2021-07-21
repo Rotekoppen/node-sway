@@ -16,47 +16,47 @@ Sends the <command> to sway, very much alike running swaymsg <command>
 
 All theese functions work the same way, they fetch something and passes it to an callback.
 
-#### workspaces(<callback>)
+#### sway.workspaces(<callback>)
 
 Gets the workspaces and passes it to the callback
 
-#### outputs(<callback>)
+#### sway.outputs(<callback>)
 
 Gets the outputs and passes it to the callback
 
-#### tree(<callback>)
+#### sway.tree(<callback>)
 
 Gets the tree and passes it to the callback
 
-#### marks(<callback>)
+#### sway.marks(<callback>)
 
 Gets the marks and passes it to the callback
 
-#### barConfig(<callback>)
+#### sway.barConfig(<callback>)
 
 Gets the bar config and passes it to the callback
 
-#### version(<callback>)
+#### sway.version(<callback>)
 
 Gets the version and passes it to the callback
 
-#### modes(<callback>)
+#### sway.modes(<callback>)
 
 Gets the available modes and passes it to the callback
 
-#### mode(<callback>)
+#### sway.mode(<callback>)
 
 Gets the active mode and passes it to the callback
 
-#### config(<callback>)
+#### sway.config(<callback>)
 
 Gets the top level config file and passes it to the callback
 
-#### seats(<callback>)
+#### sway.seats(<callback>)
 
 Gets the seats and passes it to the callback
 
-#### inputs(<callback>)
+#### sway.inputs(<callback>)
 
 Gets the inputs and passes it to the callback
 
